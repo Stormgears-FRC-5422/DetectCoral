@@ -30,8 +30,9 @@ RUN apt-get update -qq > /dev/null && \
 RUN apt-get update -qq > /dev/null && \
     apt-get install -y --no-install-recommends nginx curl -qq > /dev/null
 
-RUN pip install Cython contextlib2  pillow lxml jupyter matplotlib pandas -q && \
-    python3 -m pip install pandas -q
+#RUN pip install Cython contextlib2  pillow lxml jupyter matplotlib pandas -q && \
+#    python3 -m pip install pandas -q
+RUN pip install Cython contextlib2  pillow lxml jupyter matplotlib pandas -q
 
 # Get protoc 3.0.0, rather than the old version already in the container
 RUN curl -s -OL "https://github.com/google/protobuf/releases/download/v3.0.0/protoc-3.0.0-linux-x86_64.zip" > /dev/null && \

@@ -24,7 +24,7 @@ def make_csv(csv_path, files):
             filename[3] = 'img'
             filename[4] = filename[4][:-5]
             with open(path, 'r') as file:
-                line = json.loads(file.readlines()[0])
+                line = json.loads(file.read())
                 for obj in line["objects"]:
 
                     p1, p2 = obj["points"]["exterior"]
