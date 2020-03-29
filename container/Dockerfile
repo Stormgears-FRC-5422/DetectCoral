@@ -82,3 +82,7 @@ COPY /coral /tensorflow/models/research
 ENV PATH $PATH:/tensorflow/models/research
 
 WORKDIR ${work_dir}
+
+# install gdown to download WPI data from google drive
+RUN pip install gdown
+

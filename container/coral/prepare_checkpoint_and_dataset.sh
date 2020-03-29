@@ -45,3 +45,9 @@ cd "${LEARN_DIR}"
 wget -q -O "${ckpt_name}.tar.gz" "$ckpt_link" > /dev/null
 tar zxf "${ckpt_name}.tar.gz" > /dev/null
 mv "${ckpt_name}" "${CKPT_DIR}"
+
+# Create folders and download WPI dataset, Images Tagged as Valid.tar, from google drive
+mkdir -p /opt/ml/input/data/training
+gdown https://drive.google.com/uc?id=1_Aw69Qhr38RADCUt95teJ_f8YHBIYr61
+mv "Images Tagged as Valid.tar" /opt/ml/input/data/training
+

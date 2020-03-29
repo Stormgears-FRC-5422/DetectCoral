@@ -27,9 +27,11 @@ cd /tensorflow/models/research
 sed -i "s%NUM_CLASSES%${classes}%g" "./pipeline.config"
 
 # Get number of epochs from SageMaker
-TRAIN_STEPS=$(python3 hyper.py)
+#TRAIN_STEPS=$(python3 hyper.py)
+TRAIN_STEPS=500
 
-BATCH_SIZE=$(python3 batch.py)
+#BATCH_SIZE=$(python3 batch.py)
+BATCH_SIZE=64
 
 sed -i "s%BATCH_SIZE_PARAM%${BATCH_SIZE}%g" "./pipeline.config"
 
